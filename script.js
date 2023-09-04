@@ -6,9 +6,9 @@ async function getData() {
   let db = await response.json();
   console.log(db.data[0].GameOnline);
 
-  let judulEmp = "";
+  let contentEmp = "";
   db.data.forEach((data) => {
-    let judulIsi = ` 
+    let contentIsi = ` 
     <div class="my-10">
     <div class="">
       <h1 class="text-center font-bold text-2xl">${data.GameOnline}</h1>
@@ -24,25 +24,26 @@ async function getData() {
         <h1 class="w-[50%]  text-center p-3 font-bold">
           Produsen
         </h1>
-        <h1 class="w-[50%]  text-center p-3">
+        <h1 class="w-[50%]  text-center p-3 font-bold">
           ${data.GameOnline}
         </h1>
       </div>
       <!-- year -->
-      <div class="flex bg-gray-500">
-        <h1 class="w-[50%] text-center p-3">Year</h1>
-        <h1 class="w-[50%] text-center p-3">${data.Year}</h1>
+      <div class="flex bg-gray-400">
+        <h1 class="w-[50%] text-center p-3 font-bold">Year</h1>
+        <h1 class="w-[50%] text-center p-3 font-bold">${data.Year}</h1>
       </div>
     </div>
     <div>
       <p class="text-justify">${data.Deskripsi}</p>
     </div>
   </div>
+  <div class="h-0.5 bg-black w-full"></div>
           `;
-    judulEmp += judulIsi;
+    contentEmp += contentIsi;
   });
-  const judul = document.querySelector("#judul");
-  judul.innerHTML = judulEmp;
+  const content = document.querySelector("#content");
+  content.innerHTML = contentEmp;
 }
 getData();
 
