@@ -6,39 +6,39 @@ async function getData() {
   let db = await response.json();
   console.log(db.data[0].GameOnline);
 
-  //FADHIL
   let judulEmp = "";
   db.data.forEach((data) => {
-    let judulIsi = `  
+    let judulIsi = ` 
     <div class="my-10">
     <div class="">
       <h1 class="text-center font-bold text-2xl">${data.GameOnline}</h1>
     </div>
     <!-- gambar -->
-    <div class="pb-3">
-      <img
-        alt=""
-        src="${data.Gambar}"
-        class="w-[70%] m-auto h-52"
-      />
+    <div class="overflow-hidden rounded-lg w-[50%] h-52 m-auto my-5">
+      <img alt="" src="${data.Gambar}" class="w-full h-full" />
     </div>
     <!-- pembungkus produsen year -->
     <div class=" ">
       <!-- produsen -->
-      <div class="flex">
-        <h1 class="w-[50%] bg-orange-300 text-center p-3">Produsenn</h1>
-        <h1 class="w-[50%] bg-purple-300 text-center p-3">
+      <div class="flex bg-gray-300">
+        <h1 class="w-[50%]  text-center p-3 font-bold">
+          Produsen
+        </h1>
+        <h1 class="w-[50%]  text-center p-3">
           ${data.GameOnline}
         </h1>
       </div>
       <!-- year -->
-      <div class="flex">
-        <h1 class="w-[50%] bg-green-300 text-center p-3">Year</h1>
-        <h1 class="w-[50%] bg-gray-300 text-center p-3">${data.Year}</h1>
+      <div class="flex bg-gray-500">
+        <h1 class="w-[50%] text-center p-3">Year</h1>
+        <h1 class="w-[50%] text-center p-3">${data.Year}</h1>
       </div>
     </div>
+    <div>
+      <p class="text-justify">${data.Deskripsi}</p>
+    </div>
   </div>
-      `;
+          `;
     judulEmp += judulIsi;
   });
   const judul = document.querySelector("#judul");
@@ -46,7 +46,6 @@ async function getData() {
 }
 getData();
 
-//  AKU
 // // judul
 // for (let i = 0; i < 1; i++) {
 //   let judulEmp = `
