@@ -14,18 +14,18 @@ async function getData() {
       <h1 class="text-center font-bold text-2xl">${data.GameOnline}</h1>
     </div>
     <!-- gambar -->
-    <div class="overflow-hidden rounded-lg w-[50%] h-52 m-auto my-5">
+    <div class="overflow-hidden rounded-lg w-[80%] md:w-[50%] h-52 m-auto my-5">
       <img alt="" src="${data.Gambar}" class="w-full h-full" />
     </div>
     <!-- pembungkus produsen year -->
     <div class=" ">
       <!-- produsen -->
       <div class="flex bg-gray-300">
-        <h1 class="w-[50%]  text-center p-3 font-bold">
+        <h1 class="w-[50%] text-center p-3 font-bold">
           Produsen
         </h1>
         <h1 class="w-[50%]  text-center p-3 font-bold">
-          ${data.GameOnline}
+          ${data.Produsen}
         </h1>
       </div>
       <!-- year -->
